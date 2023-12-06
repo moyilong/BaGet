@@ -1,4 +1,4 @@
-﻿using BaGet.Protocol.Models;
+using BaGet.Protocol.Models;
 using NuGet.Versioning;
 using System.Collections.Generic;
 using System.IO;
