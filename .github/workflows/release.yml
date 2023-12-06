@@ -2,15 +2,6 @@ name: Release
 
 on:
   workflow_dispatch:
-    inputs:
-      releaseVersion:
-        description: 'Release version'
-        required: true
-        default: '1.0.0-preview1'
-      packageSource:
-        description: 'Package source'
-        required: true
-        default: 'https://api.nuget.org/v3/index.json'
 
 env:
   Version: ${{ github.event.inputs.releaseVersion }}
@@ -52,4 +43,3 @@ jobs:
         push: true
         tags: |
           ghcr.io/moyilong/baget:latest
-          ghcr.io/moyilong/baget:${{ github.event.inputs.releaseVersion }}
