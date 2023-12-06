@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29104.9
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34321.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaGet", "src\BaGet\BaGet.csproj", "{284366CB-C68F-473E-908A-50A382616AE0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaGet.Core", "src\BaGet.Core\BaGet.Core.csproj", "{FFFACD28-C300-4046-BCFE-4A7899E88EA3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaGet.Azure", "src\BaGet.Azure\BaGet.Azure.csproj", "{716C970D-9614-4265-AC92-57E8B227B98E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaGet.Core.Tests", "tests\BaGet.Core.Tests\BaGet.Core.Tests.csproj", "{89AB1AE2-6CAA-4809-8B74-D78CBE00B049}"
 EndProject
@@ -50,7 +48,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaGet.Aliyun", "src\BaGet.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaGetWebApplication", "samples\BaGetWebApplication\BaGetWebApplication.csproj", "{E5AFE55D-0932-46A9-BFA3-C8A034037377}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaGet.Web.Tests", "tests\BaGet.Web.Tests\BaGet.Web.Tests.csproj", "{BEEAAA73-36CD-4178-9C9F-6D036586E7BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaGet.Web.Tests", "tests\BaGet.Web.Tests\BaGet.Web.Tests.csproj", "{BEEAAA73-36CD-4178-9C9F-6D036586E7BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,10 +64,6 @@ Global
 		{FFFACD28-C300-4046-BCFE-4A7899E88EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFFACD28-C300-4046-BCFE-4A7899E88EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFFACD28-C300-4046-BCFE-4A7899E88EA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{716C970D-9614-4265-AC92-57E8B227B98E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{716C970D-9614-4265-AC92-57E8B227B98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{716C970D-9614-4265-AC92-57E8B227B98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{716C970D-9614-4265-AC92-57E8B227B98E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{89AB1AE2-6CAA-4809-8B74-D78CBE00B049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{89AB1AE2-6CAA-4809-8B74-D78CBE00B049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89AB1AE2-6CAA-4809-8B74-D78CBE00B049}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -137,7 +131,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{284366CB-C68F-473E-908A-50A382616AE0} = {26A0B557-53FB-4B9A-94C4-BCCF1BDCB0CC}
 		{FFFACD28-C300-4046-BCFE-4A7899E88EA3} = {26A0B557-53FB-4B9A-94C4-BCCF1BDCB0CC}
-		{716C970D-9614-4265-AC92-57E8B227B98E} = {26A0B557-53FB-4B9A-94C4-BCCF1BDCB0CC}
 		{89AB1AE2-6CAA-4809-8B74-D78CBE00B049} = {C237857D-AD8E-4C52-974F-6A8155BB0C18}
 		{892A7A82-4283-4315-B7E5-6D5B70543000} = {C237857D-AD8E-4C52-974F-6A8155BB0C18}
 		{A2D23427-9278-4D52-B31F-759212252832} = {26A0B557-53FB-4B9A-94C4-BCCF1BDCB0CC}
