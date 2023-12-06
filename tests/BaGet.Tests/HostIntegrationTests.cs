@@ -59,10 +59,11 @@ namespace BaGet.Tests
             Assert.IsType<SqliteContext>(context);
         }
 
+        
         private IServiceProvider BuildServiceProvider(Dictionary<string, string> configs = null)
         {
             var host = Program
-                .CreateHostBuilder(new string[0])
+                .CreateHostBuilder([])
                 .ConfigureAppConfiguration((ctx, config) =>
                 {
                     config.AddInMemoryCollection(configs ?? new Dictionary<string, string>());

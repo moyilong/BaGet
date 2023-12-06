@@ -58,7 +58,7 @@ namespace BaGet.Core.Tests.Services
 
             public static IEnumerable<object[]> ReturnsPackagesData()
             {
-                object[] ReturnsPackagesHelper(string packageId, string packageVersion, bool includeUnlisted, bool exists)
+                static object[] ReturnsPackagesHelper(string packageId, string packageVersion, bool includeUnlisted, bool exists)
                 {
                     return new object[] { packageId, packageVersion, includeUnlisted, exists };
                 }
@@ -98,9 +98,9 @@ namespace BaGet.Core.Tests.Services
 
             public static IEnumerable<object[]> ReturnsPackageData()
             {
-                object[] ReturnsPackageHelper(string packageId, string packageVersion, bool includeUnlisted, bool exists)
+                static object[] ReturnsPackageHelper(string packageId, string packageVersion, bool includeUnlisted, bool exists)
                 {
-                    return new object[] { packageId, packageVersion, includeUnlisted, exists };
+                    return [packageId, packageVersion, includeUnlisted, exists];
                 }
 
                 // A package that doesn't exist should never be returned

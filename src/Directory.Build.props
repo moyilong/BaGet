@@ -42,6 +42,7 @@
 
   <ItemGroup>
     <None Include="../packageIcon.png" Pack="true" PackagePath="" Visible="false" />
+    <Compile Include="../../GlobalSuppressions.cs"></Compile>
   </ItemGroup>
 
 </Project>

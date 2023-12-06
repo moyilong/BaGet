@@ -104,11 +104,11 @@ namespace BaGet.Core.Tests.Metadata
         [MemberData(nameof(ExtendedModelsData))]
         public void ValidateExtendedModels(ExtendedModelData data)
         {
-            IReadOnlyDictionary<string, PropertyInfo> originalProperties = data
+            var originalProperties = data
                 .OriginalType
                 .GetProperties()
                 .ToDictionary(p => p.Name, p => p);
-            IReadOnlyDictionary<string, PropertyInfo> derivedProperties = data
+            var derivedProperties = data
                 .DerivedType
                 .GetProperties()
                 .ToDictionary(p => p.Name, p => p);
@@ -116,9 +116,7 @@ namespace BaGet.Core.Tests.Metadata
             // Check that all properties on the original model are present on the derived model.
             var missingProperties = originalProperties.Keys.Where(name => !derivedProperties.ContainsKey(name));
 
-            Assert.True(
-                !missingProperties.Any(),
-                $"The following properties are missing from the derived type: {string.Join(',', missingProperties)}");
+            Assert.False(missingProperties.Any());
 
             // Check that all properties on the derived model are as expected compared to the original model.
             foreach (var derivedProperty in derivedProperties.Values)
@@ -126,9 +124,7 @@ namespace BaGet.Core.Tests.Metadata
                 // If the property was added, check that it is not on the original type.
                 if (data.AddedProperties.TryGetValue(derivedProperty.Name, out var addedType))
                 {
-                    Assert.True(
-                        !originalProperties.ContainsKey(derivedProperty.Name),
-                        $"Added property '{derivedProperty.Name}' exists on the original type {data.OriginalType}");
+                    Assert.False(originalProperties.ContainsKey(derivedProperty.Name));
                     Assert.True(
                         addedType == derivedProperty.PropertyType,
                         $"Added property '{derivedProperty.Name}' on type {data.DerivedType} has unexpected property type\n" +
@@ -200,7 +196,7 @@ namespace BaGet.Core.Tests.Metadata
             }
         }
 
-        private IList<CustomAttributeTypedArgument> GetAttributeArgs<TAttribute>(PropertyInfo property)
+        private static IList<CustomAttributeTypedArgument> GetAttributeArgs<TAttribute>(PropertyInfo property)
         {
             return property
                 .CustomAttributes
@@ -224,7 +220,7 @@ namespace BaGet.Core.Tests.Metadata
             /// <summary>
             /// The properties added by the model type in the "BaGet.Core" project.
             /// </summary>
-            public Dictionary<string, Type> AddedProperties { get; set; } = new Dictionary<string, Type>();
+            public Dictionary<string, Type> AddedProperties { get; set; } = [];
 
             /// <summary>
             /// The properties whose types were modified by the model type in the
