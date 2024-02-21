@@ -12,6 +12,8 @@ namespace BaGet
             this IServiceCollection services,
             Action<BaGetApplication> configureAction)
         {
+#pragma warning disable ASP5001 // 类型或成员已过时
+#pragma warning disable CS0618 // 类型或成员已过时
             services
                 .AddRouting(options => options.LowercaseUrls = true)
                 .AddControllers()
@@ -19,8 +21,12 @@ namespace BaGet
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddJsonOptions(options =>
                 {
+#pragma warning disable SYSLIB0020 // 类型或成员已过时
                     options.JsonSerializerOptions.IgnoreNullValues = true;
+#pragma warning restore SYSLIB0020 // 类型或成员已过时
                 });
+#pragma warning restore CS0618 // 类型或成员已过时
+#pragma warning restore ASP5001 // 类型或成员已过时
 
             services.AddRazorPages();
 

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 using NuGet.Versioning;
 
 namespace BaGet.Core
@@ -17,10 +19,7 @@ namespace BaGet.Core
             {
                 // Favor the original version string as it contains more information.
                 // Packages uploaded with older versions of BaGet may not have the original version string.
-                return NuGetVersion.Parse(
-                    OriginalVersionString != null
-                        ? OriginalVersionString
-                        : NormalizedVersionString);
+                return NuGetVersion.Parse(OriginalVersionString ?? NormalizedVersionString);
             }
 
             set
@@ -66,7 +65,6 @@ namespace BaGet.Core
 
         public string NormalizedVersionString { get; set; }
         public string OriginalVersionString { get; set; }
-
 
         public string IconUrlString => IconUrl?.AbsoluteUri ?? string.Empty;
         public string LicenseUrlString => LicenseUrl?.AbsoluteUri ?? string.Empty;

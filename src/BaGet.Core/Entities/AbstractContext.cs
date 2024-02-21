@@ -25,12 +25,12 @@ namespace BaGet.Core
             : base(options)
         { }
 
-        public DbSet<Package> Packages { get; set; }
-        public DbSet<PackageDependency> PackageDependencies { get; set; }
-        public DbSet<PackageType> PackageTypes { get; set; }
-        public DbSet<TargetFramework> TargetFrameworks { get; set; }
+        public virtual DbSet<Package> Packages { get; set; }
+        public virtual DbSet<PackageDependency> PackageDependencies { get; set; }
+        public virtual DbSet<PackageType> PackageTypes { get; set; }
+        public virtual DbSet<TargetFramework> TargetFrameworks { get; set; }
 
-        public Task<int> SaveChangesAsync() => SaveChangesAsync(default);
+        //public Task<int> SaveChangesAsync() => SaveChangesAsync(default);
 
         public virtual async Task RunMigrationsAsync(CancellationToken cancellationToken)
             => await Database.MigrateAsync(cancellationToken);
