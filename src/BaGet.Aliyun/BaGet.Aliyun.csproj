@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageTags>NuGet;Alibaba;Cloud</PackageTags>
     <Description>The libraries to host BaGet on Alibaba Cloud (Aliyun).</Description>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="10.0.103" />
   </ItemGroup>
 
 </Project>
