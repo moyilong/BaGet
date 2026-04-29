@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.S3" Version="4.0.19.1" />
-    <PackageReference Include="AWSSDK.SecurityToken" Version="4.0.5.13" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.5" />
+    <PackageReference Include="AWSSDK.S3" Version="4.0.22.1" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="4.0.6.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="10.0.201" />
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="10.0.203" />
   </ItemGroup>
 
 </Project>
